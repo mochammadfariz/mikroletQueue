@@ -33,3 +33,26 @@ var tambahPenumpang = function (namaPenumpang, penumpang) {
         }
     }
 }
+
+var hapusPenumpang = function (namaPenumpang, penumpang) {
+    //3 rules:
+    //jika angkot kosong, tampilkan pesan bahwa angkot kosong
+    //jika ada penumpang yg namanya sesuai,hapus nama penumpang pada array dengan memberi nilai undefined
+    // jika tidak ada penumpang yang namanya sesuai, tampilkan pesan kesalahan
+
+    //cek kondisi 1 : jika angkot kosong, tampilkan pesan bahwa angkot kosong
+    if (penumpang.length == 0) {
+        console.log("Mikrolet masih kosong.")
+        return penumpang;
+    } else {
+        for (var i = 0; i < penumpang.length; i++) {
+            if (penumpang[i] == namaPenumpang) {
+                penumpang[i] = undefined;
+                return penumpang;
+            } else if (i == penumpang.length - 1) {
+                console.log(namaPenumpang + " tidak ada didalam angkot");
+                return penumpang;
+            }
+        }
+    }
+}
